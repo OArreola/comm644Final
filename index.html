@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="img/favicon.ico" />
+    <title>Pizza Order Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <img src="img/logo.png" alt="Pizza Line Inc." class="img-fluid logo float-left"></img>
+        <h3 class="text-center align-middle">Ordering Form</h3>
+      </div>
+
+      <div class="jumbotron">
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your Order</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Product name</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$12</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Second product</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Third item</h6>
+                <small class="text-muted">Brief description</small>
+              </div>
+              <span class="text-muted">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">-$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (USD)</span>
+              <strong>$20</strong>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Delivery Information</h4>
+          <form>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="deliveryName">Name</label>
+                <input type="text" class="form-control" id="deliveryName" placeholder="" value="" />
+                <div class="invalid-feedback">
+                  Valid name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="deliveryAddrType">Address Type</label>
+                <select class="custom-select d-block w-100" id="deliveryAddrType">
+                  <option value="0">Choose...</option>
+                  <option value="1">House</option>
+                  <option value="2">Apartment</option>
+                  <option value="3">Busiess</option>
+                  <option value="4">Campus</option>
+                  <option value="5">Hotel</option>
+                  <option value="6">Dorm</option>
+                  <option value="7">Other</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid address type.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3" id="delAddTypeOther">
+                <label for="deliveryAddrTypeOther">Other</label>
+                <input type="text" class="form-control" id="deliveryAddrTypeOther" placeholder="" value="" />
+                <div class="invalid-feedback">
+                  Please enter type of address.
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="deliveryAddress">Address</label>
+                <input type="text" class="form-control" id="deliveryAddress" placeholder="" value="" />
+                <div class="invalid-feedback">
+                  Valid delivery address is required.
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="deliveryAddressNum">Apt., Suite or Room Number<span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="deliveryAddressNum" placeholder="" value="" />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="deliveryCity">City</label>
+                <input type="text" class="form-control" id="deliveryCity" placeholder="" />
+                <div class="invalid-feedback">
+                  Please enter city name.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="deliveryState">State</label>
+                <input type="text" class="form-control" id="deliveryState" placeholder="" />
+                <div class="invalid-feedback">
+                  Enter state code.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="deliveryZip">Zip</label>
+                <input type="text" class="form-control" id="deliveryZip" placeholder="" />
+                <div class="invalid-feedback">
+                  Enter valid zip code.
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="deliveryPhone">Phone</label>
+                <input type="tel" class="form-control" id="deliveryPhone" placeholder="E.g (308)-135-7895" />
+                <div class="invalid-feedback">
+                  Please enter a valid phone number.
+                </div>
+              </div>
+
+              <div class="col-md-12 mb-3">
+                <label for="deliveryEmail">Email</label>
+                <input type="email" class="form-control" id="deliveryEmail" placeholder="you@example.com" />
+                <div class="invalid-feedback">
+                  Please enter a valid email address for delivery updates.
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary float-right" type="button" id="btnDelivery">Next</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020 Pizza Place</p>
+      </footer>
+    </div>
+    <!-- /container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
