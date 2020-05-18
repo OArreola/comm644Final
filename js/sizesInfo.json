@@ -1,0 +1,28 @@
+[
+  {
+    "dough": "Hand Tossed",
+    "sizes": [
+      { "text": "Small ( $9.99 )", "price": 9.99 },
+      { "text": "Medium ( $12.99 )", "price": 12.99 },
+      { "text": "Large ( $14.99 )", "price": 14.99 }
+    ]
+  },
+  {
+    "dough": "Thin Crust",
+    "sizes": [
+      { "text": "Medium ($11.99)", "price": 11.99 },
+      { "text": "Large ($13.99)", "price": 13.99 }
+    ]
+  },
+  {
+    "dough": "New York Style",
+    "sizes": [
+      { "text": "Large ($16.99)", "price": 16.99 },
+      { "text": "Extra Large ($19.99)", "price": 19.99 }
+    ]
+  },
+  {
+    "dough": "Gluten Free",
+    "sizes": [{ "text": "Small ($10.99)", "price": 10.99 }]
+  }
+]

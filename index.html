@@ -19,58 +19,47 @@
   <body>
     <div class="container">
       <div class="header clearfix">
-        <img src="img/logo.png" alt="Pizza Line Inc." class="img-fluid logo float-left"></img>
+        <img src="img/logo.png" alt="Pizza Line Inc." class="img-fluid logo float-left" />
         <h3 class="text-center align-middle">Ordering Form</h3>
       </div>
 
-      <div class="jumbotron">
-      </div>
+      <div class="jumbotron"></div>
 
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Your Order</span>
-            <span class="badge badge-secondary badge-pill">3</span>
+            <span class="text-muted">Your Total:</span>
+            <strong><span id="orderTotal">$ 0.00</span></strong>
           </h4>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
+            <li class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between lh-condensed">
+                <h6 class="my-0">Dough:</h6>
+                <span class="text-muted" id="totalDough"></span>
               </div>
-              <span class="text-muted">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
+              <div class="d-flex w-100 justify-content-between lh-condensed">
+                <h6 class="my-0">Size:</h6>
+                <span class="text-muted" id="totalSize"></span>
               </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
+              <div class="d-flex w-100 justify-content-between lh-condensed">
+                <h6 class="my-0">Cheese:</h6>
+                <span class="text-muted" id="totalCheese"></span>
               </div>
-              <span class="text-muted">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
+              <div class="d-flex w-100 justify-content-between lh-condensed">
+                <h6 class="my-0">Sauce:</h6>
+                <span class="text-muted" id="totalSauce"></span>
               </div>
-              <span class="text-success">-$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
+              <div class="d-flex w-100 lh-condensed">
+                <h6 class="my-0">Toppings:</h6>
+              </div>
+              <p><span class="text-muted" id="totalToppings"></span></p>
             </li>
           </ul>
         </div>
 
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Delivery Information</h4>
-          <form>
+          <form id="frmDelivery">
+            <h4 class="mb-3">Delivery Information</h4>
             <div class="row">
               <div class="col-md-12 mb-3">
                 <label for="deliveryName">Name</label>
@@ -149,25 +138,226 @@
                   Please enter a valid email address for delivery updates.
                 </div>
               </div>
+              <div class="col-md-8 mb-3"></div>
+              <div class="col-md-4 mb-3">
+                <button class="btn btn-primary btn-block" type="button" id="btnDeliveryNext">Next: Build Pizza</button>
+              </div>
             </div>
-            <button class="btn btn-primary float-right" type="button" id="btnDelivery">Next</button>
+          </form>
+
+          <form id="frmBuildOrder">
+            <h4 class="mb-3">Build Your Pizza</h4>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="buildDough">Dough</label>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="optDough" id="optDough1" value="Hand Tossed" />
+                  <label class="form-check-label" for="optDough1">
+                    Hand Tossed
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="optDough" id="optDough2" value="Thin Crust" />
+                  <label class="form-check-label" for="optDough2">
+                    Thin Crust
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="optDough" id="optDough3" value="New York Style" />
+                  <label class="form-check-label" for="optDough3">
+                    New York Style
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="optDough" id="optDough4" value="Gluten Free" />
+                  <label class="form-check-label" for="optDough4">
+                    Gluten Free
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="buildSize">Size</label>
+                <select class="custom-select d-block w-100" id="buildSize" disabled>
+                  <option value="0">Choose...</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please choose a size.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="buildCheese">Cheese</label>
+                <select class="custom-select d-block w-100" id="buildCheese" disabled>
+                  <option value="0">Light</option>
+                  <option value="0" selected>Normal</option>
+                  <option value="2.99">Extra ( Add $2.99 )</option>
+                  <option value="3.99">Double ( Add $3.99)</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="buildSauce">Sauce</label>
+                <select class="custom-select d-block w-100" id="buildSauce" disabled>
+                  <option value="0" selected>Regular Tomato</option>
+                  <option value="0.99">Hearty Tomato ( Add $0.99)</option>
+                  <option value="1.99">BBQ Sauce ( Add $1.99 )</option>
+                </select>
+              </div>
+
+              <div class="col-md-12 mb-3">
+                <label for="buildToppings">Toppings: ( Each add $0.99 )</label>
+                <div id="buildToppings" disabled>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Pepperoni" id="buildTopping1" disabled />
+                    <label class="custom-control-label" for="buildTopping1">Pepperoni</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Sausage" id="buildTopping2" disabled />
+                    <label class="custom-control-label" for="buildTopping2">Sausage</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Ham" id="buildTopping3" disabled />
+                    <label class="custom-control-label" for="buildTopping3">Ham</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Bacon" id="buildTopping4" disabled />
+                    <label class="custom-control-label" for="buildTopping4">Bacon</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Salami" id="buildTopping5" disabled />
+                    <label class="custom-control-label" for="buildTopping5">Salami</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Peppers" id="buildTopping6" disabled />
+                    <label class="custom-control-label" for="buildTopping6">Peppers</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Olives" id="buildTopping7" disabled />
+                    <label class="custom-control-label" for="buildTopping7">Olives</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Jalapenos" id="buildTopping8" disabled />
+                    <label class="custom-control-label" for="buildTopping8">Jalapenos</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Mushrooms" id="buildTopping9" disabled />
+                    <label class="custom-control-label" for="buildTopping9">Mushrooms</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Pineapple" id="buildTopping10" disabled />
+                    <label class="custom-control-label" for="buildTopping10">Pineapple</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="toppings" value="Onion" id="buildTopping11" disabled />
+                    <label class="custom-control-label" for="buildTopping11">Onion</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3"></div>
+              <div class="col-md-4 mb-3">
+                <button class="btn btn-primary btn-block" type="button" id="btnBuildPrev">Prev: Delivery Info</button>
+              </div>
+              <div class="col-md-4 mb-3">
+                <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#finishModal">
+                  Next: Finish Pizza
+                </button>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="finishModal" tabindex="-1" role="dialog" aria-labelledby="finishModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="finishModalLabel">Finished Building Pizza</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure you're done building your pizza?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" id="btnBuildNext">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <form id="frmBilling">
+            <h4 class="mb-3">Billing Information</h4>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="chkSameAddress" />
+                  <label class="custom-control-label" for="chkSameAddress">Same as delivery information</label>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="billingName">Name</label>
+                <input type="text" class="form-control" id="billingName" placeholder="" value="" />
+                <div class="invalid-feedback">
+                  Valid name is required.
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="billingAddress">Address</label>
+                <input type="text" class="form-control" id="billingAddress" placeholder="" value="" />
+                <div class="invalid-feedback">
+                  Valid billing address is required.
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="billingAddressNum">Apt., Suite or Room Number<span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="billingAddressNum" placeholder="" value="" />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="billingCity">City</label>
+                <input type="text" class="form-control" id="billingCity" placeholder="" />
+                <div class="invalid-feedback">
+                  Please enter city name.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="billingState">State</label>
+                <input type="text" class="form-control" id="billingState" placeholder="" />
+                <div class="invalid-feedback">
+                  Enter state code.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="billingZip">Zip</label>
+                <input type="text" class="form-control" id="billingZip" placeholder="" />
+                <div class="invalid-feedback">
+                  Enter valid zip code.
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-3"></div>
+              <div class="col-md-4 mb-3">
+                <button class="btn btn-primary btn-block" type="button" id="btnConfirm">Place your Order</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2020 Pizza Place</p>
+        <p class="mb-1">&copy; 2020 Pizza Line</p>
       </footer>
     </div>
     <!-- /container -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
-    ></script>
+    ></script>-->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
