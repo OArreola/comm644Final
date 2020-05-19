@@ -7,6 +7,9 @@ body {
 .container {
   max-width: 960px;
 }
+/*.btn-primary {
+  background-color: orange;
+}*/
 
 .lh-condensed {
   line-height: 1.25;
@@ -15,6 +18,18 @@ body {
 .logo {
   max-width: 140px;
   max-height: 80px;
+  vertical-align: middle;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.cclogo {
+  max-height: 64px;
+  vertical-align: middle;
+  /*padding-left: 20px;*/
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -25,11 +40,11 @@ body {
 }
 
 /* Custom page header */
-.header {
+/*.header {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
-  /*background-color: lightblue;*/
-}
+  background-color: lightblue;
+}*/
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -57,7 +72,7 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  /*border-bottom: 1px solid #e5e5e5;*/
   background-image: url("../img/pizza_jumbo.png");
   background-repeat: no-repeat;
   min-height: 200px;
@@ -71,9 +86,9 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
-  .header {
+  /*.header {
     margin-bottom: 30px;
-  }
+  }*/
   .jumbotron {
     border-bottom: 0;
   }
