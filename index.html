@@ -65,14 +65,14 @@
             <div class="row">
               <div class="col-md-12 mb-3">
                 <label for="deliveryName">Name</label>
-                <input type="text" class="form-control" id="deliveryName" placeholder="" value="" />
+                <input type="text" class="form-control frmDeliveryItem" id="deliveryName" placeholder="" value="" />
                 <div class="invalid-feedback">
                   Valid name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="deliveryAddrType">Address Type</label>
-                <select class="custom-select d-block w-100" id="deliveryAddrType">
+                <select class="custom-select d-block w-100 frmDeliveryItem" id="deliveryAddrType">
                   <option value="0">Choose...</option>
                   <option value="1">House</option>
                   <option value="2">Apartment</option>
@@ -88,14 +88,14 @@
               </div>
               <div class="col-md-6 mb-3" id="delAddTypeOther">
                 <label for="deliveryAddrTypeOther">Other</label>
-                <input type="text" class="form-control" id="deliveryAddrTypeOther" placeholder="" value="" />
+                <input type="text" class="form-control frmDeliveryItem" id="deliveryAddrTypeOther" placeholder="" value="" />
                 <div class="invalid-feedback">
                   Please enter type of address.
                 </div>
               </div>
               <div class="col-md-12 mb-3">
                 <label for="deliveryAddress">Address</label>
-                <input type="text" class="form-control" id="deliveryAddress" placeholder="" value="" />
+                <input type="text" class="form-control frmDeliveryItem" id="deliveryAddress" placeholder="" value="" />
                 <div class="invalid-feedback">
                   Valid delivery address is required.
                 </div>
@@ -106,28 +106,28 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="deliveryCity">City</label>
-                <input type="text" class="form-control" id="deliveryCity" placeholder="" />
+                <input type="text" class="form-control frmDeliveryItem" id="deliveryCity" placeholder="" />
                 <div class="invalid-feedback">
                   Please enter city name.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="deliveryState">State</label>
-                <input type="text" class="form-control" id="deliveryState" placeholder="" />
+                <input type="text" class="form-control frmDeliveryItem" id="deliveryState" placeholder="" />
                 <div class="invalid-feedback">
                   Enter state code.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="deliveryZip">Zip</label>
-                <input type="text" class="form-control" id="deliveryZip" placeholder="" />
+                <input type="text" class="form-control frmDeliveryItem" id="deliveryZip" placeholder="" />
                 <div class="invalid-feedback">
                   Enter valid zip code.
                 </div>
               </div>
               <div class="col-md-12 mb-3">
                 <label for="deliveryPhone">Phone</label>
-                <input type="tel" class="form-control" id="deliveryPhone" placeholder="E.g (308)-135-7895" />
+                <input type="tel" class="form-control frmDeliveryItem" id="deliveryPhone" placeholder="E.g (308)-135-7895" />
                 <div class="invalid-feedback">
                   Please enter a valid phone number.
                 </div>
@@ -135,7 +135,7 @@
 
               <div class="col-md-12 mb-3">
                 <label for="deliveryEmail">Email</label>
-                <input type="email" class="form-control" id="deliveryEmail" placeholder="you@example.com" />
+                <input type="email" class="form-control frmDeliveryItem" id="deliveryEmail" placeholder="you@example.com" />
                 <div class="invalid-feedback">
                   Please enter a valid email address for delivery updates.
                 </div>
@@ -153,27 +153,27 @@
               <div class="col-md-6 mb-3">
                 <label for="buildDough">Dough</label>
 
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="optDough" id="optDough1" value="Hand Tossed" />
-                  <label class="form-check-label" for="optDough1">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="optDough" id="optDough1" value="Hand Tossed" />
+                  <label class="custom-control-label" for="optDough1">
                     Hand Tossed
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="optDough" id="optDough2" value="Thin Crust" />
-                  <label class="form-check-label" for="optDough2">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="optDough" id="optDough2" value="Thin Crust" />
+                  <label class="custom-control-label" for="optDough2">
                     Thin Crust
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="optDough" id="optDough3" value="New York Style" />
-                  <label class="form-check-label" for="optDough3">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="optDough" id="optDough3" value="New York Style" />
+                  <label class="custom-control-label" for="optDough3">
                     New York Style
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="optDough" id="optDough4" value="Gluten Free" />
-                  <label class="form-check-label" for="optDough4">
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="optDough" id="optDough4" value="Gluten Free" />
+                  <label class="custom-control-label" for="optDough4">
                     Gluten Free
                   </label>
                 </div>
@@ -298,14 +298,14 @@
               </div>
               <div class="col-md-12 mb-3">
                 <label for="billingName">Name</label>
-                <input type="text" class="form-control" id="billingName" placeholder="" value="" />
+                <input type="text" class="form-control frmBillingItem" id="billingName" placeholder="" value="" />
                 <div class="invalid-feedback">
                   Valid name is required.
                 </div>
               </div>
               <div class="col-md-12 mb-3">
                 <label for="billingAddress">Address</label>
-                <input type="text" class="form-control" id="billingAddress" placeholder="" value="" />
+                <input type="text" class="form-control frmBillingItem" id="billingAddress" placeholder="" value="" />
                 <div class="invalid-feedback">
                   Valid billing address is required.
                 </div>
@@ -316,21 +316,21 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="billingCity">City</label>
-                <input type="text" class="form-control" id="billingCity" placeholder="" />
+                <input type="text" class="form-control frmBillingItem" id="billingCity" placeholder="" />
                 <div class="invalid-feedback">
                   Please enter city name.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="billingState">State</label>
-                <input type="text" class="form-control" id="billingState" placeholder="" />
+                <input type="text" class="form-control frmBillingItem" id="billingState" placeholder="" />
                 <div class="invalid-feedback">
                   Enter state code.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="billingZip">Zip</label>
-                <input type="text" class="form-control" id="billingZip" placeholder="" />
+                <input type="text" class="form-control frmBillingItem" id="billingZip" placeholder="" />
                 <div class="invalid-feedback">
                   Enter valid zip code.
                 </div>
@@ -341,7 +341,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="billingCCNumber" class="justify-content-between">Credit card number</label>
-                <input type="text" class="form-control" id="billingCCNumber" placeholder="" />
+                <input type="text" class="form-control frmBillingItem" id="billingCCNumber" placeholder="" />
                 <div class="invalid-feedback">
                   Credit card number is required
                 </div>
@@ -354,7 +354,7 @@
             <div class="row">
               <div class="col-md-4 mb-3">
                 <label for="ccExpMonth">Exp. Month</label>
-                <select class="custom-select d-block w-100" id="ccExpMonth">
+                <select class="custom-select d-block w-100 frmBillingItem" id="ccExpMonth">
                   <option selected="true" disabled>Choose...</option>
                   <option value="0">January</option>
                   <option value="1">February</option>
@@ -375,7 +375,7 @@
               </div>
               <div class="col-md-4 mb-3">
                 <label for="ccExpMonth">Exp. Year</label>
-                <select class="custom-select d-block w-100" id="ccExpYear">
+                <select class="custom-select d-block w-100 frmBillingItem" id="ccExpYear">
                   <option selected="true" disabled>Choose...</option>
                   <option value="2020">2020</option>
                   <option value="2021">2021</option>
@@ -390,7 +390,7 @@
               </div>
               <div class="col-md-4 mb-3">
                 <label for="ccCVV">CVV</label>
-                <input type="text" class="form-control" id="ccCVV" placeholder="" />
+                <input type="text" class="form-control frmBillingItem" id="ccCVV" placeholder="" />
                 <div class="invalid-feedback">
                   Security code required
                 </div>
